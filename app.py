@@ -1,0 +1,34 @@
+# You will be creating a program that creates a random number and then
+# have the user guess the number. The code must contain all of the following
+# -Generate a random number between 1 and 10 (you can do more if you
+# want)
+# -Use a while loop that breaks only when the user correctly guesses the
+# number
+# -create a guess variable based on user input. There will be a global guess
+# variable equal to 0 and then another guess variable inside the while loop
+# based on user input
+# -using conditional statements, inform the user if their guess is less than or
+# greater than the random number
+# -push the users incorrect guess into a guess_history list. Print the used
+# letters at every wrong guess
+# -When the user guesses correctly inform them and show them their guess
+# history using a for loop
+
+import random
+
+random_integer = random.randint(1, 10)
+guess_history = []
+print(random_integer)
+while True:
+    rdm = int(input("Guess a number betwen 1 and 10"))
+    if rdm == random_integer:
+        print("Correct!")
+        break
+    elif rdm != random_integer:
+        print("Incorrect!")
+        guess_history.append(rdm)
+        print("Incorrect list:" + str(guess_history))
+        if rdm > random_integer:
+            print("Too High!")
+        elif rdm < random_integer:
+            print("Too Low!")
