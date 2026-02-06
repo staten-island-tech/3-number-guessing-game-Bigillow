@@ -18,16 +18,15 @@ import random
 
 random_integer = random.randint(1, 10)
 guess_history = []
-print(random_integer)
 while True:
     rdm = int(input("Guess a number betwen 1 and 10"))
     if rdm == random_integer:
-        print("Correct!")
+        print("Correct! Your guess was " + str(rdm))
         break
     elif rdm != random_integer:
         print("Incorrect!")
         guess_history.append(rdm)
-        print("Incorrect list:" + str(guess_history))
+        print("Incorrect list: " + str(guess_history))
         if rdm > random_integer:
             print("Too High!")
         elif rdm < random_integer:
